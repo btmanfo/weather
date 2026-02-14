@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Intelligence App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-a"></div>
+    <div class="bg-shape bg-shape-b"></div>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Live Weather</h2>
+        <form id="weatherForm" class="inline-form">
+          <label for="locationInput" class="sr-only">Location</label>
+          <input
+            id="locationInput"
+            type="text"
+            placeholder="e.g. New York, Eiffel Tower, 10001, or 48.8566,2.3522"
+            required
+          />
+          <button type="submit">Get Weather</button>
+          <button type="button" id="myLocationBtn" class="btn-secondary">Use My Location</button>
+        </form>
+        <p id="weatherError" class="message message-error hidden"></p>
+
+        <div id="weatherOutput" class="hidden weather-output">
+          <article class="current-card">
+            <div>
+              <p class="label">Location</p>
+              <p id="currentLocation" class="value-lg">-</p>
+            </div>
+            <div>
+              <p class="label">Current</p>
+              <p id="currentSummary" class="value-lg">-</p>
+            </div>
+            <div>
+              <p class="label">Humidity</p>
+              <p id="currentHumidity" class="value-lg">-</p>
+            </div>
+            <div>
+              <p class="label">Wind</p>
+              <p id="currentWind" class="value-lg">-</p>
+            </div>
+          </article>
+
+          <h3>Weather for the next 5 Days</h3>
+          <div id="forecastGrid" class="forecast-grid"></div>
+
+          <h3>Extra API Insights</h3>
+          <div class="insight-grid">
+            <a id="mapLink" class="insight-card" target="_blank" rel="noreferrer">Open Map (OSM)</a>
+            <a id="youtubeLink" class="insight-card" target="_blank" rel="noreferrer"
+              >Related YouTube Videos</a
+            >
+            <article id="wikiCard" class="insight-card">
+              <p class="label">Wikipedia</p>
+              <p id="wikiText">No summary available for this location yet.</p>
+              <a id="wikiLink" class="hidden" target="_blank" rel="noreferrer">Read more</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Weather Records Management</h2>
+        <form id="recordForm" class="stack-form">
+          <input type="hidden" id="recordId" />
+          <div class="form-grid">
+            <label>
+              Location:
+              <input id="recordLocation" type="text" required />
+            </label>
+            <label>
+              Start Date:
+              <input id="recordStartDate" type="date" required />
+            </label>
+            <label>
+              End Date:
+              <input id="recordEndDate" type="date" required />
+            </label>
+          </div>
+          <div class="button-row">
+            <button id="saveRecordBtn" type="submit">Create Record</button>
+            <button id="cancelEditBtn" type="button" class="btn-secondary hidden">Cancel Edit</button>
+          </div>
+        </form>
+
+        <p id="recordError" class="message message-error hidden"></p>
+        <p id="recordSuccess" class="message message-success hidden"></p>
+
+        <div class="export-row">
+          <span>Export:</span>
+          <button class="btn-secondary export-btn" data-format="json" type="button">JSON</button>
+          <button class="btn-secondary export-btn" data-format="csv" type="button">CSV</button>
+          <button class="btn-secondary export-btn" data-format="md" type="button">Markdown</button>
+          <button class="btn-secondary export-btn" data-format="xml" type="button">XML</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Location</th>
+                <th>Date Range</th>
+                <th>Min/Max C</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recordsBody"></tbody>
+          </table>
+        </div>
+
+        <h3>Selected Record Details</h3>
+        <pre id="recordDetails" class="record-details">Select a row to view payload details.</pre>
+      </section>
+    </main>
+
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>

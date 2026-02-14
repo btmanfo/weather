@@ -1,0 +1,116 @@
+.weather-output {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.current-card {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.current-card > div {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem;
+  background: rgba(246, 251, 255, 0.9);
+}
+
+.label {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.value-lg {
+  margin: 0.12rem 0 0;
+  font-size: 1.17rem;
+  font-weight: 700;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.5rem;
+}
+
+.forecast-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.forecast-card p {
+  margin: 0.2rem 0;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+.insight-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+}
+
+.insight-card:hover {
+  border-color: rgba(0, 127, 143, 0.45);
+}
+
+.export-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.58rem 0.55rem;
+  border-bottom: 1px solid rgba(24, 56, 84, 0.1);
+  vertical-align: top;
+}
+
+th {
+  background: rgba(231, 244, 248, 0.75);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+td button {
+  padding: 0.28rem 0.42rem;
+  font-size: 0.87rem;
+  margin-right: 0.25rem;
+}
+
+.record-details {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: 10px;
+  padding: 0.7rem;
+  min-height: 110px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

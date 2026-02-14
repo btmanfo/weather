@@ -1,0 +1,28 @@
+@media (max-width: 920px) {
+  .inline-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .current-card {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .layout {
+    width: min(96vw, 1120px);
+    margin-top: 1rem;
+  }
+
+  .panel {
+    padding: 0.9rem;
+  }
+
+  .current-card {
+    grid-template-columns: 1fr;
+  }
+}
